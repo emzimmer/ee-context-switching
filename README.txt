@@ -6,7 +6,7 @@ Tested up to: 5.5.1
 Requires PHP: 7.2
 Stable tag: 1.0.0
 
-Switch template contexts and save boat loads of time in Oxygen Builder. Never leave the editor!
+Never leave the editor! Switch template contexts and save boat loads of time in Oxygen Builder.
 
 == Description ==
 

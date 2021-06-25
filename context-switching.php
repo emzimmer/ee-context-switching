@@ -9,13 +9,13 @@
  * @editor-enhancer
  * Plugin Name:       EE Context Switching
  * Plugin URI:        https://editorenhancer.com
- * Description:       Take control of your style maintenance in Oxygen Builder.
+ * Description:       Never leave the editor! Switch template contexts and save boat loads of time in Oxygen Builder.
  * Version:           1.0.0
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Max Zimmer
  * Author URI:        https://emzimmer.com
- * Text Domain:       ee-style-flow
+ * Text Domain:       ee-context-switching
  */
 
 /**

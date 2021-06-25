@@ -1,13 +1,13 @@
-<h1>Welcome to Style Flow by Editor Enhancer!</h1>
+<h1>Welcome to Context Switching by Editor Enhancer!</h1>
 
 <br><br>
 
 <div class="ee-wrapper">
 
 	<div class="ee-main-content">
-		<h2>This tool provides essential style management and visibility to improve your workflow in Oxygen Builder. To get started:</h2>
+		<h2>This tool provides essential workflow navigation in Oxygen Builder. To get started:</h2>
 		<ol>
-			<li>Enter your license key for Style Flow below. Save and activate your license.</li>
+			<li>Enter your license key for Context Switching below. Save and activate your license.</li>
 			<li>Read the plugin  <a href="https://editorenhancer.com/docs/style-flow-4/" target="_blank">documentation</a> and become a master.</li>
 			<li>There are no additional settings with this single plugin. Activate and launch!</li>
 		</ol>
@@ -19,6 +19,6 @@
 			Join the EE Community
 		</a>
 		<h2>Did You Know?</h2>
-		<p>Style Flow is included in the Editor Enhancer suite. You can upgrade from your Style Flow purchase within your account on <a href="https://editorenhancer.com/login" target="_blank">Editor Enhancer</a> for a ton of additional workflow essentials!</p>
+		<p>Context Switching is included in the Editor Enhancer suite. You can upgrade from your Context Switching purchase within your account on <a href="https://editorenhancer.com/login" target="_blank">Editor Enhancer</a> for a ton of additional workflow essentials!</p>
 	</div>
 </div>

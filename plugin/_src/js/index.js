@@ -41,6 +41,22 @@ function RunContextSwitching() {
 
     jQuery('.oxygen-toolbar-panels .oxygen-toolbar-panel:first-child').append('<div id="ee-template-context"></div>');
 
+    /**
+      * Context switching to update iframe body class????????
+      */
+    $scope.iframeScope.csBodyClass = ( isInner = false ) => {
+
+        if ( isInner ) {
+
+            document.body.classList.add('ct_inner');
+        }
+        
+        else {
+            
+            document.body.classList.remove('ct_inner');
+        }
+    }
+
     ReactDOM.render(
         <React.StrictMode>
             <TemplateContext />

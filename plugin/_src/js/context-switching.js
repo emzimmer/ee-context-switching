@@ -20,22 +20,22 @@ export default function TemplateContext() {
      * Stateful variables
      */
     const [isVisible, setVisibility] = useState( false );
-    const [selectDisplay, setSelectDisplay] = useState( [editorEnhancerSettings.post_name, editorEnhancerSettings.post_id] );
+    const [selectDisplay, setSelectDisplay] = useState( [eeContextSwitchingSettings.post_name, eeContextSwitchingSettings.post_id] );
     const [currentContext, setCurrentContext] = useState(() => {
 
-        if ( editorEnhancerSettings.context_templates !== undefined ) {
+        if ( eeContextSwitchingSettings.context_templates !== undefined ) {
 
             let nonce = false;
             let isInner = null;
 
             // i will represent pages, templates, and reusable_parts
-            for ( let i in editorEnhancerSettings.context_templates ) {
+            for ( let i in eeContextSwitchingSettings.context_templates ) {
 
-                for ( let j in editorEnhancerSettings.context_templates[i] ) {
+                for ( let j in eeContextSwitchingSettings.context_templates[i] ) {
 
-                    if ( editorEnhancerSettings.context_templates[i][j].id == editorEnhancerSettings.post_id ) {
-                        nonce = editorEnhancerSettings.context_templates[i][j].nonce;
-                        isInner = editorEnhancerSettings.context_templates[i][j].isInner;
+                    if ( eeContextSwitchingSettings.context_templates[i][j].id == eeContextSwitchingSettings.post_id ) {
+                        nonce = eeContextSwitchingSettings.context_templates[i][j].nonce;
+                        isInner = eeContextSwitchingSettings.context_templates[i][j].isInner;
                         break;
                     }
                 }
@@ -44,8 +44,8 @@ export default function TemplateContext() {
             }
 
             return {
-                postId: editorEnhancerSettings.post_id,
-                title : editorEnhancerSettings.post_name,
+                postId: eeContextSwitchingSettings.post_id,
+                title : eeContextSwitchingSettings.post_name,
                 nonce : nonce,
                 isInner : isInner
             }
@@ -60,7 +60,7 @@ export default function TemplateContext() {
      */
     const createList = (templateTitle, templateType) => {
 
-        const templates = editorEnhancerSettings.context_templates !== undefined ? editorEnhancerSettings.context_templates : false;
+        const templates = eeContextSwitchingSettings.context_templates !== undefined ? eeContextSwitchingSettings.context_templates : false;
 
         if ( templates && Object.keys( templates[templateType] ).length > 0 ) {
 
@@ -385,7 +385,7 @@ export default function TemplateContext() {
 
                     // Send AJAX request
                     jQuery.ajax({
-                        url : editorEnhancerSettings.ajaxurl,
+                        url : eeContextSwitchingSettings.ajaxurl,
                         method : "POST",
                         data : data,
                         transformResponse: false,
@@ -412,7 +412,7 @@ export default function TemplateContext() {
                             // Update postID references
                             $scope.iframeScope.ajaxVar.postId = postId;
                             CtBuilderAjax.postId = postId;
-                            editorEnhancerSettings.post_id = postId;
+                            eeContextSwitchingSettings.post_id = postId;
 
                             // Update nonce references
                             $scope.iframeScope.ajaxVar.nonce = nonce;
@@ -532,7 +532,7 @@ export default function TemplateContext() {
 
         // Send the data
         jQuery.ajax({
-            url: editorEnhancerSettings.ajaxurl,
+            url: eeContextSwitchingSettings.ajaxurl,
             method: "GET",
             data: data
         })
@@ -544,7 +544,7 @@ export default function TemplateContext() {
                 return;
             }
 
-            editorEnhancerSettings.context_templates = JSON.parse(response);
+            eeContextSwitchingSettings.context_templates = JSON.parse(response);
 
             setCsTemplates( () => createList( 'Templates', 'templates' ) );
             setCsReusables( () => createList( 'Reusable Parts', 'reusable_parts' ) );
@@ -563,16 +563,16 @@ export default function TemplateContext() {
             <span>Context</span>
             <div>
                 <div onClick={() => setVisibility(!isVisible)}>
-                    <a title='Go to admin page' href={editorEnhancerSettings.admin_url + '/post.php?action=edit&post=' + selectDisplay[1]}>
+                    <a title='Go to admin page' href={eeContextSwitchingSettings.admin_url + '/post.php?action=edit&post=' + selectDisplay[1]}>
                         <i className='fa fa-external-link'></i>
                     </a>
                     <span>{selectDisplay[0]}</span>
-                    {editorEnhancerSettings.context_switching &&
+                    {eeContextSwitchingSettings.context_switching &&
                         <i className='fa fa-caret-down'></i>
                     }
                 </div>
 
-                {isVisible && editorEnhancerSettings.context_switching ?
+                {isVisible && eeContextSwitchingSettings.context_switching ?
 
                     <div id='ee-context-switching'>
                         <div

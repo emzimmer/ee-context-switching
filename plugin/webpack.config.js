@@ -8,7 +8,7 @@ module.exports = {
     entry: './_src/js/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'style-flow.js'
+        filename: 'context-switching.js'
     },
     module: {
         rules: [
